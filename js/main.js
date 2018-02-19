@@ -18,12 +18,14 @@ var cards = [
 ]
 var cardsInPlay = [];
 
+
 var checkForMatch = function(){
 	if (cardsInPlay.length === 2 && cardsInPlay[0] === cardsInPlay[1]) { 
-		alert("You found a match!");
+		alert("You found a match!") ? " ":location.reload();
+		
 	}
-	else if (cardsInPlay.length === 2){
-		alert("Sorry, try again.");
+	else if (cardsInPlay.length === 2){;
+		alert("Sorry, try again.") ? " ": location.reload();
 	}
 }
 var flipCard = function(){
@@ -35,6 +37,10 @@ var flipCard = function(){
 }
 var createBoard = function () {
 	for (var i = 0; i < cards.length; i++){
+		var j = Math.floor(Math.random()*(i+1));
+		var temp = cards[i];
+		cards [i] = cards [j];
+		cards [j] = temp;
 	var cardElement = document.createElement('img');
 		cardElement.setAttribute('src', 'images/back.png');
 		cardElement.setAttribute('data-id', i);
