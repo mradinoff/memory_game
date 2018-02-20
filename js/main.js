@@ -18,14 +18,13 @@ var cards = [
 ]
 var cardsInPlay = [];
 
-
-var checkForMatch = function(){
+ checkForMatch = function(){
 	if (cardsInPlay.length === 2 && cardsInPlay[0] === cardsInPlay[1]) { 
-		alert("You found a match!") ? " ":location.reload();
+		setTimeout(function(){alert("You found a match!") ? " ":location.reload();}, 500)
 		
 	}
-	else if (cardsInPlay.length === 2){;
-		alert("Sorry, try again.") ? " ": location.reload();
+	else if (cardsInPlay.length === 2){
+		setTimeout(function(){alert("Sorry, try again.") ? " ": location.reload();}, 500);
 	}
 }
 var flipCard = function(){
